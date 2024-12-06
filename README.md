@@ -68,9 +68,21 @@ Data files in `./data` include:
 - **WikiTQ-4k**
 - **WikiTQ+**
 
+### Setting Your OpenAI Key:
+
+Before running the code, you need to set your `api_key` and `base_url` in `utils/request_gpt.py`.
+
+```python
+client = OpenAI(
+    api_key="",  # Set your API key here
+    base_url=""  # Set the base URL for the API here
+)
+```
+
 ### Run
 
 You can run the code by executing the following command in your terminal:
 
 ```bash
 bash run.sh
+```
