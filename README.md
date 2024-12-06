@@ -68,5 +68,9 @@ Data files in `./data` include:
 - **WikiTQ-4k**
 - **WikiTQ+**
 
-### TableGuide Framework
+### Run
 
+You can run the code by executing the following command in your terminal:
+
+```bash
+bash run.sh
