@@ -29,16 +29,13 @@ All data is stored in `jsonl` format, where each entry contains the following fi
 
 ## Benchmark Dataset
 
-+ Our dataset is publicly available for download via the Baidu Cloud link:
-
-  - **URL**: [Link to dataset]
-  - **Password**: [Password for access]
++ Our dataset is publicly available in our repository.
 
   ### Datasets:
-
-  1. **WikiTQ-4k**:
+  
+1. **WikiTQ-4k**:
      - **WikiTableQuestions (WikiTQ)** is a well-known benchmark dataset for question answering over structured tabular data. For our experiments, we filter the dataset to include only tables with more than 4k tokens, resulting in a subset of 488 entries.
-  2. **WikiTQ+**:
+2. **WikiTQ+**:
      - To augment the WikiTQ dataset, we extend medium-sized tables (containing 2k to 4k tokens) by adding additional rows generated using GPT-4o with prompt-based table generation techniques. These expanded tables now contain at least 4k tokens. The WikiTQ+ dataset includes 1023 entries.
 
 ## Baseline Method
@@ -70,16 +67,6 @@ Data files in `./data` include:
 
 - **WikiTQ-4k**
 - **WikiTQ+**
-
-Once you download our dataset, the directory structure should look like this:
-
-```bash
-/data
-    /WikiTQ-4k
-    /WikiTQ+
-```
-
-Make sure to place the dataset in the specified folder for smooth execution of the code.
 
 ### TableGuide Framework
 
