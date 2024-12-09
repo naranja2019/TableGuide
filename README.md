@@ -1,6 +1,7 @@
 # TableGuide
 
 **TableGuide: A Stepwise-Guided Retrieval and Reasoning Framework for Large-Scale Table QA**
+
 For reproduction of Large-Scale Table QA results in our paper, see instructions below.
 
 ## Overview
@@ -67,6 +68,19 @@ Data files in `./data` include:
 
 - **WikiTQ-4k**
 - **WikiTQ+**
+
+### Prompt
+
+The prompt contains the templates used to call LLMs. The key prompts in TableGuide include:
+
+- **`final_reasoning`**: The final reasoning step, where the model synthesizes information from the retrieved data to answer the question.
+- **`get_col_template`**: Generates a column summary template based on the table schema.
+- **`get_row_template`**: Generates a row summary template based on the table schema.
+- **`get_solution_plan`**: Generates a solution plan for answering the table-based question.
+- **`noplan_reasoning`**: Used for ablation studies, this prompt handles reasoning without a solution plan.
+- **`prompt_schema_linking`**: Links the schema of the table with the question to ensure proper alignment between the data and the query.
+
+In TableGuide, the prompts are dynamically generated based on the input data and task requirements. This stepwise-guided approach ensures that the model receives all the necessary information in a structured format, allowing it to retrieve relevant information from the table and reason through the data to answer complex questions effectively.
 
 ### Setting Your OpenAI Key:
 

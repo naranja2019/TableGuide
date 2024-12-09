@@ -60,9 +60,7 @@ def clean_header(header):
         if not column_name.strip():  # Check if the column is empty or contains only whitespace
             cleaned_name = 'null'  # Replace empty column names with 'null'
         else:
-            # Replace non-alphanumeric characters with underscores
             cleaned_name = re.sub(r'\W+', '_', column_name)
-            # Ensure no consecutive underscores and remove leading/trailing underscores
             cleaned_name = re.sub(r'_+', '_', cleaned_name).strip('_')
         
         cleaned_header.append(cleaned_name)  # Append cleaned column name to the list
@@ -80,12 +78,9 @@ def clean_table(table):
     Returns:
     - list: A cleaned version of the input table with cleaned headers.
     """
-    # Make a deep copy of the table to avoid modifying the original table
     table_copy = copy.deepcopy(table)
-    # Clean the header by calling clean_header
     header = table_copy[0]
     cleaned_header = clean_header(header)
-    # Rebuild the table with the cleaned header
     cleaned_table = [cleaned_header] + table_copy[1:]
     
     return cleaned_table
@@ -101,12 +96,9 @@ def index_table(table):
     Returns:
     - list: A new table with a "row index" column added.
     """
-    # Make a deep copy of the table to avoid modifying the original table
     table_copy = copy.deepcopy(table)
-    # Add a new column for row index as the first column
     table_copy[0].insert(0, "row index")
-    
-    # Add the row index for each row (excluding the header)
+
     for i in range(1, len(table_copy)):
         table_copy[i].insert(0, f"row {i}")
     
